@@ -2,7 +2,7 @@
 function getTestIndex() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT username, password FROM users");
+        $stmt = $conn->prepare("SELECT username, password FROM user");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
