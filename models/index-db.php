@@ -1,5 +1,6 @@
 <?php
-function getTestIndex() {
+function getTestIndex()
+{
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("Select username, password from User; ");
@@ -11,6 +12,7 @@ function getTestIndex() {
         $conn->close();
         throw $e;
     }
+}
     function login($username, $password) {
     try {
         $conn = get_db_connection();
