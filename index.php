@@ -15,16 +15,14 @@ include "views/header.php";
         </tr>
         </thead>
         <tbody>
+        <?php while($user = $users->fetch_assoc()) { ?>
+            <tr>
+                <td><?php echo $user['username']; ?></td>
+                <td><?php echo $user['password']; ?></td>
+            </tr>
         <?php
         $users = getTestIndex();
-        while ($user = $users->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $user["username"] . "</td>";
-            echo "<td>" . $user["password"] . "</td>";
-            echo "</tr>";
-        }
-        ?>
-        </tbody>
+       y>
     </table>
 <?php
 include "views/footer.php";
