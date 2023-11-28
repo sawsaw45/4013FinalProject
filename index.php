@@ -6,7 +6,7 @@ $login = login('sawyer', 'password2!');
 $pageTitle = "Home";
 include "views/header.php";
 ?>
-    //<h1>Final Project <?php ?></h1>
+    <h1>Final Project <?php ?></h1>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
@@ -18,8 +18,8 @@ include "views/header.php";
         <tbody>
         <?php while($user = $users->fetch_assoc()) { ?>
             <tr>
-                <td><?php echo $user['username']; ?></td>
-                <td><?php echo $user['password']; ?></td>
+                <td><?php //echo $user['username']; ?></td>
+                <td><?php //echo $user['password']; ?></td>
             </tr>
         <?php
 
