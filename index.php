@@ -23,7 +23,7 @@ include "views/header.php";
             </tr>
         <?php
 
-        } ?>
+       // } ?>
 
     </table>
 <?php
