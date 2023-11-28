@@ -21,12 +21,17 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""></a>
+                    <?php if(!isset($_SESSION['user'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="views/register-newform.php">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="views/login-form.php">Log In</a>
+                        </li>
+                    <?php } ?>
                     </li>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Post Result</a>
+                        <a class="nav-link" href="">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Get</a>
