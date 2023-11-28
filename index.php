@@ -6,7 +6,7 @@ $login = login($_POST['sawyer'], $_POST['password2!']);
 $pageTitle = "Home";
 include "views/header.php";
 ?>
-    <h1>Final Project <?php echo $_SESSION['userid']</h1>
+    <h1>Final Project <?php echo $_SESSION['userid']?></h1>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
