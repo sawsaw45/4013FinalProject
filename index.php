@@ -19,8 +19,8 @@ include "views/header.php";
         $users = getTestIndex();
         while ($user = $users->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $users["username"] . "</td>";
-            echo "<td>" . $users["password"] . "</td>";
+            echo "<td>" . $user["username"] . "</td>";
+            echo "<td>" . $user["password"] . "</td>";
             echo "</tr>";
         }
         ?>
