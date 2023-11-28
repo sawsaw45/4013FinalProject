@@ -16,11 +16,11 @@ include "views/header.php";
         </thead>
         <tbody>
         <?php
-        $result = getTestIndex();
-        while ($row = $result->fetch_assoc()) {
+        $users = getTestIndex();
+        while ($user = $users->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row["username"] . "</td>";
-            echo "<td>" . $row["password"] . "</td>";
+            echo "<td>" . $users["username"] . "</td>";
+            echo "<td>" . $users["password"] . "</td>";
             echo "</tr>";
         }
         ?>
