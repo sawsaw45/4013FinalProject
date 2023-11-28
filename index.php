@@ -2,7 +2,7 @@
 require_once("models/connection.php");
 require_once("models/index-db.php");
 $users = getTestIndex();
-$login = login($_POST['sawyer'], $_POST['password2!']);
+$login = login('sawyer', 'password2!');
 $pageTitle = "Home";
 include "views/header.php";
 ?>
