@@ -24,6 +24,7 @@ function getTestIndex()
             $row = $result->fetch_assoc();
             $_SESSION['user'] = $row['username'];
             $_SESSION['user_id'] = $row['userid'];
+            $loggedin = true;
             $result->close();
             $conn->close();
             return true;
