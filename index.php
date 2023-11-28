@@ -1,7 +1,7 @@
 <?php
 require_once("models/connection.php");
 require_once("models/index-db.php");
-
+$users = getTestIndex();
 $pageTitle = "Home";
 include "views/header.php";
 ?>
@@ -21,8 +21,8 @@ include "views/header.php";
                 <td><?php echo $user['password']; ?></td>
             </tr>
         <?php
-        $users = getTestIndex();
-       y>
+
+        } ?>
     </table>
 <?php
 include "views/footer.php";
