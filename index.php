@@ -16,7 +16,7 @@ include "views/header.php";
         </tr>
         </thead>
         <tbody>
-        <?php while($user = $users->fetch_assoc()) { ?>
+        <?php //while($user = $users->fetch_assoc()) { ?>
             <tr>
                 <td><?php //echo $user['username']; ?></td>
                 <td><?php //echo $user['password']; ?></td>
