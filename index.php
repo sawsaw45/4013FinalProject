@@ -20,8 +20,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item ms-auto">
                         <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
                     </li>
 
