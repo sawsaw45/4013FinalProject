@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 function getTestIndex()
 {
     try {
@@ -24,11 +24,12 @@ function getTestIndex()
             $row = $result->fetch_assoc();
             $_SESSION['user'] = $row['username'];
             $_SESSION['user_id'] = $row['userid'];
-            $loggedin = true;
+            $_SESSION['logged_in'] = true;
             $result->close();
             $conn->close();
             return true;
         } else {
+            $_SESSION['logged_in'] = false;
             $result->close();
             $conn->close();
             return false;
