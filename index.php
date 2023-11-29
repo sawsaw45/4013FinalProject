@@ -30,13 +30,13 @@
                             <a class="nav-link" href="views/register-newform.php"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views/login-form.php">Log </a>
+                            <a class="nav-link" href="views/login-form.php"></a>
                         </li>
                     <?php } ?>
 
                     <?php if($loggedin) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="views/logoutform.php">Log Out</a>
+                            <a class="nav-link" href="views/logoutform.php"></a>
                         </li>
                     <?php } ?>
 
