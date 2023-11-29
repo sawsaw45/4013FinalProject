@@ -36,7 +36,7 @@
 
                     <?php if($loggedin) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Log Out</a>
+                            <a class="nav-link" href="logoutform.php">Log Out</a>
                         </li>
                     <?php } ?>
 
@@ -52,8 +52,7 @@
 <?php
 require_once("models/connection.php");
 require_once("models/index-db.php");
-//$users = getTestIndex();
-$login = login('sawyer', 'password2!');
+
 
 
 ?>
