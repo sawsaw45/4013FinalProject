@@ -27,16 +27,16 @@
 
                     <?php if(!$loggedin) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="views/register-newform.php"></a>
+                            <a><?php include"views/register-newform.php"?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views/login-form.php"></a>
+                            <a> <?php include"views/login-form.php"?></a>
                         </li>
                     <?php } ?>
 
                     <?php if($loggedin) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="views/logoutform.php"></a>
+                            <a><?php include"views/logoutform.php"?></a>
                         </li>
                     <?php } ?>
 
