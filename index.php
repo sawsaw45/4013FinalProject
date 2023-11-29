@@ -24,7 +24,8 @@
                     <li class="nav-item ms-auto">
                         <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
                     </li>
-
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
                     <?php if(!$loggedin) { ?>
                         <li class="nav-item me-auto" style="padding-left:10px;padding-right:10px;">
                             <a><?php include"views/register-newform.php"?></a>
