@@ -26,7 +26,7 @@
                     </li>
 
                     <?php if(!$loggedin) { ?>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-left:10px;padding-right:10px;">
                             <a><?php include"views/register-newform.php"?></a>
                         </li>
                         <li class="nav-item">
