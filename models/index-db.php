@@ -25,12 +25,12 @@ function getTestIndex()
             $row = $result->fetch_assoc();
             $_SESSION['user'] = $row['username'];
             $_SESSION['user_id'] = $row['userid'];
-            $_SESSION['logged_in'] = true;
+            $_SESSION['logged_in'] = "1";
             $result->close();
             $conn->close();
             return true;
         } else {
-            $_SESSION['logged_in'] = false;
+            $_SESSION['logged_in'] = "";
             $result->close();
             $conn->close();
             return false;
