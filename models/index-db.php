@@ -18,7 +18,7 @@ function getNotes()
 {
     try{
         $conn = get_db_connection();
-        $stmt = $conn->prepare("Select name, contents, duedate, priority from Notes; ");
+        $stmt = $conn->prepare("Select name, contents, due_date, priority from Notes; ");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
