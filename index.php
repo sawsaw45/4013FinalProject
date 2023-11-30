@@ -10,10 +10,10 @@
     <?php
     require_once("models/connection.php");
     require_once("models/index-db.php");
-    $loggedin = false;
+    $loggedin = 0;
 
     if (isset($_SESSION['logged_in'])) {
-        $loggedin = true;
+        $loggedin = 1;
     }
     ?>
 </head>
@@ -33,7 +33,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
-                    <?php if($loggedin = false) { ?>
+                    <?php if($loggedin = 0) { ?>
                         <li class="nav-item me-auto" style="padding-left:10px;padding-right:10px;">
                             <a><?php include"views/register-newform.php"?></a>
                         </li>
@@ -42,7 +42,7 @@
                         </li>
                     <?php } ?>
 
-                    <?php if($loggedin = true) { ?>
+                    <?php if($loggedin = 1) { ?>
                         <li class="nav-item me-auto">
                             <a><?php include"views/logoutform.php"?></a>
                         </li>
