@@ -59,7 +59,13 @@ require_once("models/index-db.php");
 ?>
     <h1>Final Project <?php ?></h1>
 
-
+<form method="post" action="index.php">
+<input type="hidden" name="submit" value="submit">
+<button type="button" class="btn btn-primary">
+    Test Login
+</button>
+</form>
+<?php if(isset($_POST['submit'])) { login("sawyerhays", "password2!"); } ?>
     </table>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
