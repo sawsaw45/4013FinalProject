@@ -34,7 +34,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
-                    <?php if(!$loggedin) { ?>
+                    <?php if($loggedin = false) { ?>
                         <li class="nav-item me-auto" style="padding-left:10px;padding-right:10px;">
                             <a><?php include"views/register-newform.php"?></a>
                         </li>
@@ -43,7 +43,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
                         </li>
                     <?php } ?>
 
-                    <?php if($loggedin) { ?>
+                    <?php if($loggedin = true) { ?>
                         <li class="nav-item me-auto">
                             <a><?php include"views/logoutform.php"?></a>
                         </li>
