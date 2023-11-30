@@ -14,4 +14,19 @@ function getTestIndex()
     }
 
 }
+function getNotes()
+{
+    try{
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("Select name, contents, duedate, priority from Note; ");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>

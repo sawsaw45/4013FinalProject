@@ -34,13 +34,42 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<div class="container">
+    <h1>Final Project </h1>
+    <?php
+    // Fetch notes from the database
+    $notes = getNotes(); // Assume getNotes() retrieves notes from the database
+
+    // Loop through notes and display them as cards
+    foreach ($notes as $note) {
+        echo '<div class="card">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
+        echo '<p class="card-text">' . $note['Contents'] . '</p>';
+        echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['DueDate'] . '</p>';
+        echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';
+        echo '<button class="btn btn-primary" onclick="openModal(' . $note['ID'] . ')">View Details</button>';
+        echo '</div></div>';
+    }
+    ?>
+
+</div>
 </body>
-
-    <h1>Final Project <?php ?></h1>
-
-
-
-    </table>
+<script>
+    function openModal(noteId) {
+        // Fetch note details using AJAX or pass data to the modal
+        // Display note details in SweetAlert2 modal
+        Swal.fire({
+            title: 'Note Details',
+            html: '<strong>Name:</strong> ' + note['Name'] +
+                '<br><strong>Contents:</strong> ' + note['Contents'] +
+                '<br><strong>Due Date:</strong> ' + note['DueDate'] +
+                '<br><strong>Priority:</strong> ' + note['Priority'],
+            confirmButtonText: 'Close'
+        });
+    }
+</script>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
