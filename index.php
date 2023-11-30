@@ -61,8 +61,7 @@
     <h1>Final Project <?php ?></h1>
 
 <form method="post" action="">
-<input type="hidden" name="submit" value="submit">
-<button type="submit" class="btn btn-primary">
+<button type="submit" name="submit" value="submit" class="btn btn-primary">
     Test Login
 </button>
 </form>
