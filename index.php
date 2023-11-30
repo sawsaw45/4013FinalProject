@@ -62,7 +62,7 @@
     Test Login
 </button>
 </form>
-<?php if(isset($_POST['submit'])) { login("sawyerhays", "password2!"); } ?>
+<?php if(isset($_POST['submit'])) { login("sawyer", "password2!"); } ?>
     </table>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
