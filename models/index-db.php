@@ -29,7 +29,7 @@ function getTestIndex()
             $conn->close();
             return true;
         } else {
-            $_SESSION['logged_in'] = "";
+
             $result->close();
             $conn->close();
             return false;
