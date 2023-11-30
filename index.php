@@ -10,11 +10,6 @@
     <?php
     require_once("models/connection.php");
     require_once("models/index-db.php");
-    $loggedin = 0;
-
-    if (isset($_SESSION['logged_in'])) {
-        $loggedin = 1;
-    }
     ?>
 </head>
 <body>
@@ -32,23 +27,6 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
-                    <?php if($loggedin = 0) { ?>
-                        <li class="nav-item me-auto" style="padding-left:10px;padding-right:10px;">
-                            <a><?php include"views/register-newform.php"?></a>
-                        </li>
-                        <li class="nav-item me-auto">
-                            <a> <?php include"views/login-form.php"?></a>
-                        </li>
-                    <?php } ?>
-
-                    <?php if($loggedin = 1) { ?>
-                        <li class="nav-item me-auto">
-                            <a><?php include"views/logoutform.php"?></a>
-                        </li>
-                    <?php } ?>
-
-                </ul>
 
             </div>
         </div>
@@ -60,18 +38,8 @@
 
     <h1>Final Project <?php ?></h1>
 
-<form method="post" action="">
-<button type="submit" name="submit" value="submit" class="btn btn-primary">
-    Test Login
-</button>
-</form>
-<?php if(isset($_POST['submit'])) {
-    try {
-        login("sawyer", "password2!");
-    } catch (Exception $e) {
-        //hopefully it doenst need to be caught
-    }
-} ?>
+
+
     </table>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
