@@ -57,7 +57,7 @@
 </div>
 </body>
 <script>
-    function openModal(noteId) {
+    function openModal(noteid) {
         // Fetch note details using AJAX or pass data to the modal
         // Display note details in SweetAlert2 modal
         Swal.fire({
