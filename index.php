@@ -12,7 +12,7 @@
     require_once("models/index-db.php");
     $loggedin = false;
 
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] = true) {
     $loggedin = true;
 
 }
