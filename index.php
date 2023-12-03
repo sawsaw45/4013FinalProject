@@ -50,7 +50,7 @@
         echo '<div class="card">';
         echo '<div class="card-body d-flex flex-column">';
         echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
-        echo '<p class="card-text mb-4">' . $note['Contents'] . '</p>';
+        echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
         echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';
         echo '<button class="btn btn-primary" onclick="openModal(' . $note['noteid'] . ')">View Details</button>';
