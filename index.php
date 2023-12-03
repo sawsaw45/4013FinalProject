@@ -48,7 +48,7 @@
         ?> <div class="col-lg-4 mb-3 d-flex align-items-stretch">
     <?php
         echo '<div class="card">';
-        echo '<div class="card-body">';
+        echo '<div class="card-body d-flex flex-column">';
         echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
         echo '<p class="card-text">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
