@@ -45,7 +45,7 @@
 
     // Loop through notes and display them as cards
     foreach ($notes as $note) {
-        ?> <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        ?> <div class="col-lg-3 mb-2 d-flex align-items-stretch">
     <?php
         echo '<div class="card">';
         echo '<div class="card-body d-flex flex-column">';
