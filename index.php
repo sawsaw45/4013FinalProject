@@ -38,7 +38,7 @@
 <div class="container">
     <h1>Final Project </h1>
     <div class="container">
-        <div class="row row-cols-auto">
+        <div class="row row-cols-4">
     <?php
     // Fetch notes from the database
     $notes = getNotes(); // Assume getNotes() retrieves notes from the database
