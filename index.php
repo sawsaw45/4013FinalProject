@@ -37,12 +37,16 @@
 
 <div class="container">
     <h1>Final Project </h1>
+    <div class="container">
+        <div class="row row-cols-auto">
     <?php
     // Fetch notes from the database
     $notes = getNotes(); // Assume getNotes() retrieves notes from the database
 
     // Loop through notes and display them as cards
     foreach ($notes as $note) {
+        ?> <div class="col">
+    <?php
         echo '<div class="card">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
@@ -50,9 +54,11 @@
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
         echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';
         echo '<button class="btn btn-primary" onclick="openModal(' . $note['noteid'] . ')">View Details</button>';
-        echo '</div></div>';
+    echo '</div></div>'; ?></div><?php
     }
     ?>
+        </div>
+    </div>
 
 </div>
 </body>
