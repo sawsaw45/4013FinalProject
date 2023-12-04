@@ -67,9 +67,7 @@
 
     foreach ($notes as $note) {
         $priority = $note['Priority'];
-        if ($priority > 10) {
-            $priority = 10;
-        }
+
         $priorityBg = '';
         if ($priority <= 0) {
             $priorityBg = 'border-secondary';
