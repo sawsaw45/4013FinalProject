@@ -12,28 +12,7 @@
     <style>  .card {
             width: 200px;
         }
-        .modal-backdrop {
-            z-index: 1040 !important;
-        }
-        /* Apply hover effect to cards but not modals */
-        .card:not(.modal) {
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .card:not(.modal):hover {
-            transform: scale(1.05);
-        }
-        .priority-10 {
-            animation: flashBorder 1s infinite; /* Add flashing animation to border color */
-        }
-
-        @keyframes flashBorder {
-            0%, 50%, 100% {
-                border-color: #dc3545; /* Flashing color (adjust as needed) */
-            }
-            25%, 75% {
-                border-color: #ffffff; /* Color between flashes (adjust as needed) */
-            }</style>
+       </style>
 
 
 </head>
