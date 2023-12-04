@@ -91,7 +91,7 @@
 <script>
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(card, dueDate) {
-        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
+        var countDownDate = moment(dueDate, 'Y-m-d').toDate();
 
         function updateCountdown() {
             var now = moment();
