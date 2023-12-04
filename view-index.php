@@ -42,7 +42,7 @@
 
     <div class="container">
         <?php include "new-to-do.php";?>
-        <div class="row row-cols-6">
+        <div class="pt-1 row row-cols-6">
     <?php
     // Fetch notes from the database
     $notes = getNotes(); // Assume getNotes() retrieves notes from the database
