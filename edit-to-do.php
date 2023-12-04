@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="DueDate<?php echo $note['Due Date']?>" class="form-label">Due Date</label>
-                        <input type="datetime-local" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
+                        <input type="date" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
                     </div>
                     <div class="mb-3">
                         <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority</label>
