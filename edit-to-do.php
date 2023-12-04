@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Due Date<?php echo $note['noteid']?>" class="form-label">Due Date</label>
-                        <input type="date" id="DueDate<?php echo $note['noteid']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
+                        <input type="date" class="form-control" id="DueDate<?php echo $note['noteid']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
                     </div>
                     <div class="mb-3">
                         <label for="Priority<?php echo $note['noteid']?>" class="form-label">Priority Level <span class="bg-info bg-gradient border border-1 border-dark"><span class="text-success">1</span>-<span class="text-danger">10</span> (Higher is more urgent)</span></label>
