@@ -15,4 +15,20 @@ function getNotes()
         throw $e;
     }
 }
+function insertNote($name, $contents, $dueDate, $priority)
+{
+    try{
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO Notes (`Name`, `Contents`, `Due Date`, `Priority`) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $name, $contents, $dueDate, $priority);
+        $stmt->execute();
+        $conn->close();
+        return true;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+}
 ?>

@@ -27,7 +27,7 @@
           </div>
             <div class="mb-3">
                 <label for="DueDate" class="form-label">Due Date</label>
-                <input type="datetime-local" id="DueDate" name="DueDate">
+                <input type="date" id="DueDate" name="DueDate">
             </div>
             <div class="mb-3">
                 <label for="Priority" class="form-label">Priority</label>
