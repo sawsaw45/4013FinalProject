@@ -7,7 +7,7 @@
 </button>
 
 
-<div class="modal fade" id="editToDoModal<?php echo $note['noteid']; ?>" tabindex="-1" aria-labelledby="editToDoModalLabel<?php echo $note['noteid']; ?>" aria-hidden="true"style=" z-index: 1050;">
+<div class="modal fade" id="editToDoModal<?php echo $note['noteid']; ?>" tabindex="-1" aria-labelledby="editToDoModalLabel<?php echo $note['noteid']; ?>" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
