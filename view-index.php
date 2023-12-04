@@ -86,13 +86,13 @@
 
 </div>
 </body>
-<!-- Add this script after including your other scripts -->
+
 <script>
-    // Function to initialize countdown for a specific card
+
     function initializeCardCountdown(timerId, dueDate) {
-        var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
+        //var cardId = timerId.replace("timer-", ""); this should be unessesary but if i need it later its here
         var countDownDate = new Date(dueDate);
-        var interval; // Declare the interval variable
+        var interval;
 
         function updateCountdown() {
             var now = new Date();
@@ -118,14 +118,15 @@
         }
 
         updateCountdown();
-        interval = setInterval(updateCountdown, 1000); // Assign the interval here
+        interval = setInterval(updateCountdown, 1000);
     }
 
-    // Get all timers and initialize countdown for each
+
     var timers = document.querySelectorAll('.card-timer');
+    // find each div with this class and put in array
     timers.forEach(function(timer) {
         var timerId = timer.id;
-        var dueDate = timer.parentElement.dataset.dueDate; // Adjust to navigate up to the card div
+        var dueDate = timer.parentElement.dataset.dueDate; //make sure the data is actuall in this parent element
         initializeCardCountdown(timerId, dueDate);
     });
 </script>
