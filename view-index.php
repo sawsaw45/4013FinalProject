@@ -12,6 +12,13 @@
     <style>  .card {
             width: 200px;
         }
+        .card:not(.modal) {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:not(.modal):hover {
+            transform: scale(1.05);
+        }
        </style>
 
 
