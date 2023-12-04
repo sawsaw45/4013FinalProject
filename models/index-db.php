@@ -44,6 +44,19 @@ function deleteNote($noteid)
         throw $e;
     }
 }
+function updateNote($noteid, $name, $contents, $dueDate, $priority){
+    try{
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("UPDATE Notes SET `Name` = ?, `Contents` = ?, `Due Date` = ?, `Priority` = ? WHERE noteid = ?");
+        $stmt->bind_param("ssssi", $name, $contents, $dueDate, $priority, $noteid);
+        $stmt->execute();
+        $conn->close();
+        return true;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 
 
 ?>
