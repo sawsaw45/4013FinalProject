@@ -13,7 +13,9 @@
             width: 200px;
             transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
         }
-
+        .modal-backdrop {
+            z-index: 1040 !important;
+        }
         .card:hover {
             transform: scale(1.05); /* Scale the card slightly when hovered */
         }
