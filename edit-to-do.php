@@ -33,6 +33,7 @@
                         <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo $note['Priority']?>">
                     </div>
                     <div class="mb-3">
+                        <label for="timer" class="form-label">Timer</label>
                         <a id="timer"></a>
                     </div>
 
