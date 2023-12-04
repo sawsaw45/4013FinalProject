@@ -30,5 +30,5 @@ function insertNote($name, $contents, $dueDate, $priority)
     }
 }
 
-}
+
 ?>
