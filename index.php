@@ -14,8 +14,8 @@ if (isset($_POST['actionType'])) {
             }
             break;
         case "Edit":
-            if (updateCourse($_POST['cNumber'], $_POST['cDesc'], $_POST['cid'])) {
-                echo '<div class="alert alert-success" role="alert">Course edited.</div>';
+            if (updateNote($_POST['noteid'], $_POST['Name'], $_POST['Contents'], $_POST['Due Date'], $_POST['Priority'])) {
+                echo '<div class="alert alert-success" role="alert">Note updated.</div>';
             } else {
                 echo '<div class="alert alert-danger" role="alert">Error.</div>';
             }
