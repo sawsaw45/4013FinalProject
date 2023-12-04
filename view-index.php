@@ -95,7 +95,7 @@
 
         function updateCountdown() {
             var now = moment().toDate().getTime();
-            var distance = moment(countDownDate).diff(now);
+            var distance = moment(dueDate, 'YYYY-MM-DD').diff(now);
 
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
