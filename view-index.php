@@ -7,6 +7,7 @@
     <title>Final Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
     <style> .card{
             width:200px;
@@ -83,9 +84,41 @@
 
 </div>
 </body>
-<script>
 
-</script>
+                 <script>
+                     // Function to initialize countdown for a specific modal
+                     function initializeModalCountdown(modalId, dueDate) {
+                         var countDownDate = moment(dueDate).toDate();
+
+                         function updateCountdown() {
+                             var now = moment();
+                             var distance = moment(countDownDate).diff(now);
+
+                             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                             document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                             if (distance <= 0) {
+                                 clearInterval(interval);
+                                 document.getElementById("timer").innerHTML = "EXPIRED";
+                             }
+                         }
+
+                         updateCountdown();
+                         var interval = setInterval(updateCountdown, 1000);
+                     }
+
+                     
+                     document.addEventListener('show.bs.modal', function (event) {
+                         var modalId = event.target.id; // Get the ID of the opened modal
+                         var dueDate = event.relatedTarget.dataset.dueDate; // Get the due date from the data attribute
+                         initializeModalCountdown(modalId, dueDate); // Initialize countdown for the opened modal with due date
+                     });
+                 </script>
+
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
