@@ -64,11 +64,11 @@
             $priorityBg = 'border-danger';
         }
 
-        ?> <div class="col-md mb-2 d-flex align-items-stretch" date-due-date="<?php echo $note['Due Date']?>>
+        ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
        <div class="card border <?php echo $priorityBg?>">
            
-       <div class="card-body d-flex flex-column">
+       <div class="card-body d-flex flex-column" date-due-date="<?php echo $note['Due Date']?>>
        <h5 class="card-title"><?php echo $note['Name']?></h5>
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
