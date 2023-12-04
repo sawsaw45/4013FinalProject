@@ -64,7 +64,7 @@
             $priorityBg = 'border-danger';
         }
 
-        ?> <div class="col-md mb-2 d-flex align-items-stretch">
+        ?> <div class="col-md mb-2 d-flex align-items-stretch" date-due-date="<?php echo $note['Due Date']?>>
 
        <div class="card border <?php echo $priorityBg?>">
            
@@ -73,7 +73,9 @@
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
        <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
+        <div class="card-timer"></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
+
 
         <?php
     echo '</div></div>'; ?></div><?php
@@ -85,40 +87,41 @@
 </div>
 </body>
 
-    <!-- Add this script after including your other scripts -->
-    <script>
-        // Function to initialize countdown for a specific modal
-        function initializeModalCountdown(modalId, dueDate) {
+<!-- Add this script after including your other scripts -->
+<script>
+    // Function to initialize countdown for a specific card
+    function initializeCardCountdown(card, dueDate) {
         var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
 
         function updateCountdown() {
-        var now = moment();
-        var distance = moment(countDownDate).diff(now);
+            var now = moment();
+            var distance = moment(countDownDate).diff(now);
 
-        if (distance > 0) {
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance > 0) {
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("editToDoModal" + modalId + "-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    } else {
-        clearInterval(interval);
-        document.getElementById("editToDoModal" + modalId + "-timer").innerHTML = "EXPIRED";
-    }
-    }
+                card.querySelector('.card-timer').innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            } else {
+                clearInterval(interval);
+                card.querySelector('.card-timer').innerHTML = "EXPIRED";
+            }
+        }
 
         updateCountdown();
         var interval = setInterval(updateCountdown, 1000);
     }
 
-        // Event listener for modal show event
-        document.addEventListener('show.bs.modal', function (event) {
-        var modalId = event.target.id; // Get the ID of the opened modal
-        var dueDate = event.relatedTarget.dataset.dueDate; // Get the due date from the data attribute
-        initializeModalCountdown(modalId, dueDate); // Initialize countdown for the opened modal with due date
+    // Get all cards and initialize countdown for each
+    var cards = document.querySelectorAll('.col-md');
+    cards.forEach(function(card) {
+        var dueDate = card.dataset.dueDate;
+        initializeCardCountdown(card, dueDate);
     });
 </script>
+
 
 
 
