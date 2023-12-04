@@ -92,18 +92,19 @@
 
 </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>    // Add modal-open class to the card when the modal is opened
+            $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
+                $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
+            });
+
+            // Remove modal-open class from the card when the modal is closed
+            $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
+                $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
+            });</script>
 </body>
 
 <script>
-    // Add modal-open class to the card when the modal is opened
-    $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
-        $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
-    });
 
-    // Remove modal-open class from the card when the modal is closed
-    $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
-        $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
-    });
 
     function initializeCardCountdown(timerId, dueDate) {
         //var cardId = timerId.replace("timer-", ""); this should be unessesary but if i need it later its here
