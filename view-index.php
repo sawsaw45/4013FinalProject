@@ -89,8 +89,9 @@
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
-    function initializeCardCountdown(cardId, dueDate) {
-        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
+    function initializeCardCountdown(timerId, dueDate) {
+        var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
+        var countDownDate = moment(dueDate, 'Y-M-D').toDate();
 
         function updateCountdown() {
             var now = moment();
@@ -102,10 +103,10 @@
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("timer-" + cardId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                document.getElementById(timerId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
                 clearInterval(interval);
-                document.getElementById("timer-" + cardId).innerHTML = "EXPIRED";
+                document.getElementById(timerId).innerHTML = "EXPIRED";
             }
         }
 
@@ -113,14 +114,15 @@
         var interval = setInterval(updateCountdown, 1000);
     }
 
-    // Get all cards and initialize countdown for each
-    var cards = document.querySelectorAll('.card');
-    cards.forEach(function(card) {
-        var cardId = card.id.replace("card-", ""); // Extract the noteid from the card ID
-        var dueDate = card.dataset.dueDate;
-        initializeCardCountdown(cardId, dueDate);
+    // Get all timers and initialize countdown for each
+    var timers = document.querySelectorAll('.card-timer');
+    timers.forEach(function(timer) {
+        var timerId = timer.id;
+        var dueDate = timer.parentElement.parentElement.parentElement.dataset.dueDate; // Adjust to navigate up to the card div
+        initializeCardCountdown(timerId, dueDate);
     });
 </script>
+
 
 
 
