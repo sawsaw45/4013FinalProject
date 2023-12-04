@@ -91,15 +91,15 @@
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
-        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
+        var countDownDate = new Date(dueDate);
         var interval; // Declare the interval variable
 
         function updateCountdown() {
-            var now = moment();
-            var distance = moment(countDownDate).diff(now);
+            var now = new Date();
+            var distance = countDownDate - now;
 
-            console.log('now:', now.format('YYYY-MM-DD HH:mm:ss'));
-            console.log('countDownDate:', moment(countDownDate).format('YYYY-MM-DD HH:mm:ss'));
+            console.log('now:', now);
+            console.log('countDownDate:', countDownDate);
             console.log('distance:', distance);
 
             if (distance > 0) {
