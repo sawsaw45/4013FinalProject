@@ -66,7 +66,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border <?php echo $priorityBg?>" data-due-date="<?php echo (new DateTime($note['Due Date']))->format('Y-m-d'); ?>">
+       <div class="card border <?php echo $priorityBg?>" data-due-date="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
            
        <div class="card-body d-flex flex-column" >
        <h5 class="card-title"><?php echo $note['Name']?></h5>
