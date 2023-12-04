@@ -90,18 +90,25 @@
 <script>
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
+        var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
         var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
         var interval; // Declare the interval variable
 
         function updateCountdown() {
-            var now = moment().toDate();
-            var distance = countDownDate.diff(now);
+            var now = moment();
+            var distance = moment(countDownDate).diff(now);
+
+            console.log('now:', now.format('YYYY-MM-DD HH:mm:ss'));
+            console.log('countDownDate:', moment(countDownDate).format('YYYY-MM-DD HH:mm:ss'));
+            console.log('distance:', distance);
 
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                console.log('days:', days, 'hours:', hours, 'minutes:', minutes, 'seconds:', seconds);
 
                 document.getElementById(timerId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
@@ -122,6 +129,7 @@
         initializeCardCountdown(timerId, dueDate);
     });
 </script>
+
 
 
 
