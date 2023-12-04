@@ -114,7 +114,7 @@
     }
 
     // Get all cards and initialize countdown for each
-    var cards = document.querySelectorAll('.col-md .card');
+    var cards = document.querySelectorAll('.card');
     cards.forEach(function(card) {
         var cardId = card.id.replace("card-", ""); // Extract the noteid from the card ID
         var dueDate = card.dataset.dueDate;
