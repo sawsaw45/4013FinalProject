@@ -86,12 +86,11 @@
 
 </div>
 </body>
-
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(card, dueDate) {
-        var countDownDate = moment(dueDate, 'Y-m-d').toDate();
+        var countDownDate = moment(dueDate, 'Y-M-D').toDate();
 
         function updateCountdown() {
             var now = moment();
@@ -121,6 +120,7 @@
         initializeCardCountdown(card, dueDate);
     });
 </script>
+
 
 
 
