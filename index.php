@@ -7,6 +7,7 @@
     <title>To-Doo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
     <style> .card{
             width:200px;
         }</style>
@@ -64,19 +65,46 @@
     </div>
 
 </div>
+<script src="https://unpkg.com/js-datepicker"></script>
 </body>
 <script>
     function openModal(noteid) {
-        // Fetch note details using AJAX or pass data to the modal
-        // Display note details in SweetAlert2 modal
         Swal.fire({
             title: 'Note Details',
-            html: '<strong>Name:</strong> ' + note['Name'] +
-                '<br><strong>Contents:</strong> ' + note['Contents'] +
-                '<br><strong>Due Date:</strong> ' + note['DueDate'] +
-                '<br><strong>Priority:</strong> ' + note['Priority'],
-            confirmButtonText: 'Close'
-        });
+            html: '<div class="container"><div class="row"><div class="col-md"><strong>Name:</strong></div><div class="col-md">' + noteid + '</div></div></div>',
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false,
+            confirmButtonText: 'Edit',
+            cancelButtonText: 'Delete',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Edit Note',
+                    html: '<div class="container"><div class="row"><div class="col-md"><strong>Name:</strong></div><div class="col-md"><input type="text" class="form-control" id="cNumber" name="cNumber"></div></div></div>',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: 'Save',
+                    cancelButtonText: 'Cancel',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                })
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire({
+                    title: 'Are you sure you want to delete this note?',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: 'Delete',
+                    cancelButtonText: 'Cancel',
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                })
+            }
+        })
     }
 </script>
     <div class="container">
