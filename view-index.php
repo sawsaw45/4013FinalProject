@@ -66,7 +66,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border <?php echo $priorityBg?>" date-due-date=""<?php echo date('Y-m-d',strtotime($note['Due Date']))?>"">
+       <div class="card border <?php echo $priorityBg?>" data-due-date=""<?php echo date('Y-m-d',strtotime($note['Due Date']))?>"">
            
        <div class="card-body d-flex flex-column" >
        <h5 class="card-title"><?php echo $note['Name']?></h5>
@@ -89,9 +89,11 @@
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
+    // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
         var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
+        var interval; // Declare the interval variable
 
         function updateCountdown() {
             var now = moment();
@@ -111,8 +113,9 @@
         }
 
         updateCountdown();
-        var interval = setInterval(updateCountdown, 1000);
+        interval = setInterval(updateCountdown, 1000); // Assign the interval here
     }
+
 
     // Get all timers and initialize countdown for each
     var timers = document.querySelectorAll('.card-timer');
