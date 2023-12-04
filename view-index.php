@@ -16,7 +16,18 @@
 
         .card:hover {
             transform: scale(1.05); /* Scale the card slightly when hovered */
-        }</style>
+        }
+        .priority-10 {
+            animation: flashBorder 1s infinite; /* Add flashing animation to border color */
+        }
+
+        @keyframes flashBorder {
+            0%, 50%, 100% {
+                border-color: #dc3545; /* Flashing color (adjust as needed) */
+            }
+            25%, 75% {
+                border-color: #ffffff; /* Color between flashes (adjust as needed) */
+            }</style>
 
 
 </head>
@@ -56,6 +67,9 @@
 
     foreach ($notes as $note) {
         $priority = $note['Priority'];
+        if ($priority > 10) {
+            $priority = 10;
+        }
         $priorityBg = '';
         if ($priority <= 0) {
             $priorityBg = 'border-secondary';
@@ -66,7 +80,8 @@
         } elseif ($priority <= 6) {
             $priorityBg = 'border-warning';
         } else {
-            $priorityBg = 'border-danger';
+            $priorityBg = ($priority == 10) ? 'border-danger priority-10' : 'border-danger';
+
         }
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
