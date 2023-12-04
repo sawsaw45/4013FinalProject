@@ -11,13 +11,17 @@
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
     <style>  .card {
             width: 200px;
-            transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
         }
         .modal-backdrop {
             z-index: 1040 !important;
         }
-        .card:hover {
-            transform: scale(1.05); /* Scale the card slightly when hovered */
+        /* Apply hover effect to cards but not modals */
+        .card:not(.modal) {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:not(.modal):hover {
+            transform: scale(1.05);
         }
         .priority-10 {
             animation: flashBorder 1s infinite; /* Add flashing animation to border color */
