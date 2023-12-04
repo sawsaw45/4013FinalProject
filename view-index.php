@@ -91,6 +91,7 @@
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
+        dueDate = dueDate.replace(/-/g, '/');
         var countDownDate = new Date(dueDate);
         var interval; // Declare the interval variable
 
@@ -129,6 +130,7 @@
         initializeCardCountdown(timerId, dueDate);
     });
 </script>
+
 
 
 
