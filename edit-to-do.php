@@ -1,4 +1,4 @@
-<!-- Button trigger modal -->
+
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editToDoModal<?php echo $note['noteid']; ?>">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -6,7 +6,7 @@
     </svg>
 </button>
 
-<!-- Modal -->
+
 <div class="modal fade" id="editToDoModal<?php echo $note['noteid']; ?>" tabindex="-1" aria-labelledby="editToDoModalLabel<?php echo $note['noteid']; ?>" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,13 +17,18 @@
             <div class="modal-body">
                 <form method="post" action="">
                     <div class="mb-3">
-                        <label for="cNumber<?php echo $note['noteid']; ?>" class="form-label">Course number</label>
-                        <input type="text" class="form-control" id="cNumber<?php echo $note['noteid']; ?>" name="cNumber" value="<?php echo $note['course_number']; ?>">
+                        <label for="Name<?php echo $note['noteid']; ?>" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name<?php echo $note['noteid']; ?>" name="Name" value="<?php echo $note['Name']; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="cDesc<?php echo $note['noteid']; ?>" class="form-label">Course description</label>
-                        <input type="text" class="form-control" id="cDesc<?php echo $note['noteid']; ?>" name="cDesc" value="<?php echo $note['course_description']; ?>">
+                        <label for="Contents<?php echo $note['noteid']; ?>" class="form-label">Contents</label>
+                        <input type="text" class="form-control" id="Contents<?php echo $note['noteid']; ?>" name="Contents" value="<?php echo $note['Contents']; ?>">
                     </div>
+                    <div class="mb-3">
+                        <label for="DueDate<?php echo $note['Due Date']?>" class="form-label">Due Date</label>
+                        <input type="datetime-local" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo $note['Due Date']?>">
+                    </div>
+
                     <input type="hidden" name="cid" value="<?php echo $note['noteid']; ?>">
                     <input type="hidden" name="actionType" value="Edit">
                     <button type="submit" class="btn btn-primary">Save</button>
