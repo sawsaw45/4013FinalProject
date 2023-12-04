@@ -89,11 +89,8 @@
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
-    function initializeCardCountdown(timerId) {
+    function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
-        var cardElement = document.getElementById(cardId);
-        var dueDate = cardElement.getAttribute('data-due-date');
-        dueDate = dueDate.replace(/-/g, '/');
         var countDownDate = new Date(dueDate);
         var interval; // Declare the interval variable
 
@@ -101,11 +98,17 @@
             var now = new Date();
             var distance = countDownDate - now;
 
+            console.log('now:', now);
+            console.log('countDownDate:', countDownDate);
+            console.log('distance:', distance);
+
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                console.log('days:', days, 'hours:', hours, 'minutes:', minutes, 'seconds:', seconds);
 
                 document.getElementById(timerId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
@@ -122,9 +125,11 @@
     var timers = document.querySelectorAll('.card-timer');
     timers.forEach(function(timer) {
         var timerId = timer.id;
-        initializeCardCountdown(timerId);
+        var dueDate = timer.parentElement.dataset.dueDate; // Adjust to navigate up to the card div
+        initializeCardCountdown(timerId, dueDate);
     });
 </script>
+
 
 
 
