@@ -66,13 +66,13 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border <?php echo $priorityBg?>" date-due-date="<?php echo $note['Due Date']?>">
+       <div class="card border <?php echo $priorityBg?>" date-due-date=""<?php echo date('Y-m-d',strtotime($note['Due Date']))?>"">
            
        <div class="card-body d-flex flex-column" >
        <h5 class="card-title"><?php echo $note['Name']?></h5>
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
-       <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
-       <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
+       <p class="card-text"><strong>Due Date: </strong> <?php echo $note['Due Date']?></p>
+       <p class="card-text"><strong>Priority: </strong><?php echo $note['Priority']?></p>
         <div class="card-timer" id="timer-<?php echo $note['noteid']; ?>"></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
 
@@ -91,7 +91,7 @@
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
-        var countDownDate = moment(dueDate, 'Y-M-D').toDate();
+        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
 
         function updateCountdown() {
             var now = moment();
