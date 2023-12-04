@@ -73,7 +73,7 @@
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
        <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
-        <div class="card-timer"></div>
+        <div class="card-timer" id="timer-<?php echo $note['noteid']; ?>"></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
 
 
@@ -89,8 +89,8 @@
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
-    function initializeCardCountdown(card, dueDate) {
-        var countDownDate = moment(dueDate, 'Y-M-D');
+    function initializeCardCountdown(cardId, dueDate) {
+        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
 
         function updateCountdown() {
             var now = moment();
@@ -102,10 +102,10 @@
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                card.querySelector('.card-timer').innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                document.getElementById("timer-" + cardId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
                 clearInterval(interval);
-                card.querySelector('.card-timer').innerHTML = "EXPIRED";
+                document.getElementById("timer-" + cardId).innerHTML = "EXPIRED";
             }
         }
 
@@ -114,14 +114,13 @@
     }
 
     // Get all cards and initialize countdown for each
-    var cards = document.querySelectorAll('.card');
+    var cards = document.querySelectorAll('.card-body');
     cards.forEach(function(card) {
+        var cardId = card.id.replace("card-", ""); // Extract the noteid from the card ID
         var dueDate = card.dataset.dueDate;
-        initializeCardCountdown(card, dueDate);
+        initializeCardCountdown(cardId, dueDate);
     });
 </script>
-
-
 
 
 
