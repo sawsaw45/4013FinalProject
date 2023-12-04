@@ -97,7 +97,7 @@
         function updateCountdown() {
             var now = new Date();
             var distance = countDownDate - now;
-
+            console.log('dueDate:', dueDate);
             console.log('now:', now);
             console.log('countDownDate:', countDownDate);
             console.log('distance:', distance);
