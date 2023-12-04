@@ -31,5 +31,6 @@ if (isset($_POST['actionType'])) {
 }
 
 $notes = getNotes();
-include "index.php";
+include "view-index.php";
+include "view-index.php";
 ?>

@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item ms-auto">
-                        <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
+                        <a class="nav-link active" aria-current="page" href="view-index.php">Notes</a>
                     </li>
                 </ul>
 
