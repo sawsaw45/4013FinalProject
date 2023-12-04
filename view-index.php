@@ -94,7 +94,7 @@
         var interval; // Declare the interval variable
 
         function updateCountdown() {
-            var now = moment();
+            var now = moment().toDate().getTime();
             var distance = moment(countDownDate).diff(now);
 
             if (distance > 0) {
