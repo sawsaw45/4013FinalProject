@@ -94,8 +94,8 @@
         var interval; // Declare the interval variable
 
         function updateCountdown() {
-            var now = moment().toDate().getTime();
-            var distance = moment(dueDate, 'YYYY-MM-DD').diff(now);
+            var now = moment().toDate();
+            var distance = countDownDate.diff(now);
 
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
