@@ -49,14 +49,24 @@
 
 
     foreach ($notes as $note) {
+        $priority = $note['Priority'];
+        $priorityBg = '';
+        if ($priority <= 3) {
+            $priorityBg = 'bg-success';
+        } elseif ($priority <= 6) {
+            $priorityBg = 'bg-warning';
+        } else {
+            $priorityBg = 'bg-danger';
+        }
+
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
-    <?php
-        echo '<div class="card">';
-        echo '<div class="card-body d-flex flex-column">';
-        echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
-        echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
-        echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
-        echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';     ?>
+
+       <div class="card <?php echo $priorityBg?>">
+       <div class="card-body d-flex flex-column">
+       <h5 class="card-title"><?php echo $note['Name']?></h5>
+       <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
+       <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
+       <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
         <p><?php include "edit-to-do.php";?><?php include "delete-to-do.php";?></p>
         <?php
     echo '</div></div>'; ?></div><?php
