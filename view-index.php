@@ -68,12 +68,12 @@
 
        <div class="card border <?php echo $priorityBg?>">
            
-       <div class="card-body d-flex flex-column">
+       <div class="card-body d-flex flex-column" date-due-date="<?php echo $note['Due Date']?>">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
        <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
-        <div class="card-timer" date-due-date="<?php echo $note['Due Date']?>"></div>
+        <div class="card-timer"></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
 
 
