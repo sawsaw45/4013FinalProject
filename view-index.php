@@ -51,12 +51,16 @@
     foreach ($notes as $note) {
         $priority = $note['Priority'];
         $priorityBg = '';
-        if ($priority <= 3) {
-            $priorityBg = 'bg-success';
+        if ($priority <= 0) {
+            $priorityBg = 'border-secondary';
+
+        }
+        elseif ($priority <= 3) {
+            $priorityBg = 'border-success';
         } elseif ($priority <= 6) {
-            $priorityBg = 'bg-warning';
+            $priorityBg = 'border-warning';
         } else {
-            $priorityBg = 'bg-danger';
+            $priorityBg = 'border-danger';
         }
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
@@ -64,7 +68,7 @@
        <div class="card">
            
        <div class="card-body d-flex flex-column">
-       <h5 class="card-title <?php echo $priorityBg?>"><?php echo $note['Name']?></h5>
+       <h5 class="card-title"><?php echo $note['Name']?></h5>
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
        <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
