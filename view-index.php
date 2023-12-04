@@ -72,7 +72,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border hoverable-card <?php echo $priorityBg?>" >
+       <div class="card border hoverable-card <?php echo $priorityBg?>" id="card-<?php echo $note['noteid']; ?>" >
            
        <div class="card-body d-flex flex-column" data-due-date="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
