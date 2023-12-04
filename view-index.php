@@ -29,7 +29,7 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
                     </li>
                 </ul>
-
+                                                                    
             </div>
         </div>
     </nav>
@@ -38,7 +38,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <div class="container">
-    <h1>Final Project </h1>
+    <h1>Final Project</h1>
 
     <div class="container">
         <?php include "new-to-do.php";?>
@@ -57,7 +57,8 @@
         echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
         echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';     ?>
-        <a><?php include "edit-to-do.php";?></a>      <?php
+        <a><?php include "edit-to-do.php";?></a>
+        <a> <?php include "delete-to-do.php";?></a><?php
     echo '</div></div>'; ?></div><?php
     }
     ?>
