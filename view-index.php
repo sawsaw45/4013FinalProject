@@ -65,7 +65,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card">
+       <div class="card border <?php echo $priorityBg?>">
            
        <div class="card-body d-flex flex-column">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
