@@ -78,8 +78,7 @@
         } elseif ($priority <= 6) {
             $priorityBg = 'border-warning';
         } else {
-            $priorityBg = ($priority == 10) ? 'border-danger priority-10' : 'border-danger';
-
+            $priorityBg = 'border-danger';
         }
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
