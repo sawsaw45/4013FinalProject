@@ -56,8 +56,8 @@
         echo '<h5 class="card-title">' . $note['Name'] . '</h5>';
         echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
-        echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';
-        echo '<a. .include "edit-to-do.php"; . </a>';
+        echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';     ?>
+        <a><?php include "edit-to-do.php";?>   </a>      <?php
     echo '</div></div>'; ?></div><?php
     }
     ?>
