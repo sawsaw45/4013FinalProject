@@ -87,7 +87,8 @@
 <script>
     // Function to initialize countdown for a specific modal
     function initializeModalCountdown(modalId, dueDate) {
-        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
+        var correctedDate = date('Y-m-d',strtotime(dueDate)
+        var countDownDate = moment(correctedDate);
 
         function updateCountdown() {
             var now = moment();
