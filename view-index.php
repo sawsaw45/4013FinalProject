@@ -39,9 +39,9 @@
 
 <div class="container">
     <h1>Final Project </h1>
-    <?php include "new-to-do.php";?>
-    <div class="container">
 
+    <div class="container">
+        <div class="py-1"  <?php include "new-to-do.php";?>
         <div class="row row-cols-6">
     <?php
     // Fetch notes from the database
