@@ -25,15 +25,15 @@
                         <input type="text" class="form-control" id="Contents<?php echo $note['noteid']; ?>" name="Contents" value="<?php echo $note['Contents']; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="DueDate<?php echo $note['Due Date']?>" class="form-label">Due Date</label>
-                        <input type="date" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
+                        <label for="Due Date<?php echo $note['noteid']?>" class="form-label">Due Date</label>
+                        <input type="date" id="DueDate<?php echo $note['noteid']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
                     </div>
                     <div class="mb-3">
-                        <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority Level <span class="bg-info bg-gradient border border-1 border-dark"><span class="text-success">1</span>-<span class="text-danger">10</span> (Higher is more urgent)</span></label>
-                        <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo $note['Priority']?>">
+                        <label for="Priority<?php echo $note['noteid']?>" class="form-label">Priority Level <span class="bg-info bg-gradient border border-1 border-dark"><span class="text-success">1</span>-<span class="text-danger">10</span> (Higher is more urgent)</span></label>
+                        <input type="text" class="form-control" id="Priority<?php echo $note['noteid']?>" name="Priority" value="<?php echo $note['Priority']?>">
                     </div>
 
-                    <input type="hidden" name="cid" value="<?php echo $note['noteid']; ?>">
+                    <input type="hidden" name="noteid" value="<?php echo $note['noteid']; ?>">
                     <input type="hidden" name="actionType" value="Edit">
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
