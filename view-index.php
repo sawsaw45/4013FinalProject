@@ -57,7 +57,7 @@
         echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
         echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';     ?>
-        <a><?php include "edit-to-do.php";?><?php include "delete-to-do.php";?></a>
+        <p><?php include "edit-to-do.php";?><?php include "delete-to-do.php";?></p>
         <?php
     echo '</div></div>'; ?></div><?php
     }
