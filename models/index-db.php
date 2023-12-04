@@ -30,5 +30,20 @@ function insertNote($name, $contents, $dueDate, $priority)
     }
 }
 
+function deleteNote($noteid)
+{
+    try{
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("DELETE FROM Notes WHERE noteid = ?");
+        $stmt->bind_param("i", $noteid);
+        $stmt->execute();
+        $conn->close();
+        return true;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 
 ?>
