@@ -19,14 +19,14 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Not Taking</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item ms-auto">
-                        <a class="nav-link active" aria-current="page" href="view-index.php">Notes</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Notes</a>
                     </li>
                 </ul>
 
@@ -44,10 +44,10 @@
         <?php include "new-to-do.php";?>
         <div class="pt-1 row row-cols-6">
     <?php
-    // Fetch notes from the database
-    $notes = getNotes(); // Assume getNotes() retrieves notes from the database
 
-    // Loop through notes and display them as cards
+    $notes = getNotes();
+
+
     foreach ($notes as $note) {
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
     <?php
