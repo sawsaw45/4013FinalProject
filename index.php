@@ -57,7 +57,7 @@
         echo '<p class="card-text d-inline-block text-truncate">' . $note['Contents'] . '</p>';
         echo '<p class="card-text"><strong>Due Date:</strong> ' . $note['Due Date'] . '</p>';
         echo '<p class="card-text"><strong>Priority:</strong> ' . $note['Priority'] . '</p>';
-        echo '<button class="btn btn-primary" onclick="openModal(' . $note['noteid'] . ')">View Details</button>';
+        echo '<a. .include "edit-to-do.php"; . </a>';
     echo '</div></div>'; ?></div><?php
     }
     ?>
@@ -65,47 +65,9 @@
     </div>
 
 </div>
-<script src="https://unpkg.com/js-datepicker"></script>
 </body>
 <script>
-    function openModal(noteid) {
-        Swal.fire({
-            title: 'Note Details',
-            html: '<div class="container"><div class="row"><div class="col-md"><strong>Name:</strong></div><div class="col-md">' + noteid + '</div></div></div>',
-            showCloseButton: true,
-            showCancelButton: true,
-            focusConfirm: false,
-            confirmButtonText: 'Edit',
-            cancelButtonText: 'Delete',
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: 'Edit Note',
-                    html: '<div class="container"><div class="row"><div class="col-md"><strong>Name:</strong></div><div class="col-md"><input type="text" class="form-control" id="cNumber" name="cNumber"></div></div></div>',
-                    showCloseButton: true,
-                    showCancelButton: true,
-                    focusConfirm: false,
-                    confirmButtonText: 'Save',
-                    cancelButtonText: 'Cancel',
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                })
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                Swal.fire({
-                    title: 'Are you sure you want to delete this note?',
-                    showCloseButton: true,
-                    showCancelButton: true,
-                    focusConfirm: false,
-                    confirmButtonText: 'Delete',
-                    cancelButtonText: 'Cancel',
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                })
-            }
-        })
-    }
+
 </script>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
