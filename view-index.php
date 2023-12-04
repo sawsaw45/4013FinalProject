@@ -12,12 +12,9 @@
     <style>  .card {
             width: 200px;
         }
-        .card:not(.modal) {
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .card:not(.modal):hover {
+        hoverable-card:not(.modal-open):hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
         }
        </style>
 
@@ -75,7 +72,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border <?php echo $priorityBg?>" >
+       <div class="card border hoverable-card <?php echo $priorityBg?>" >
            
        <div class="card-body d-flex flex-column" data-due-date="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
@@ -94,9 +91,19 @@
     </div>
 
 </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 <script>
+    // Add modal-open class to the card when the modal is opened
+    $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
+        $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
+    });
+
+    // Remove modal-open class from the card when the modal is closed
+    $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
+        $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
+    });
 
     function initializeCardCountdown(timerId, dueDate) {
         //var cardId = timerId.replace("timer-", ""); this should be unessesary but if i need it later its here
