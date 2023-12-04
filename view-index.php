@@ -114,7 +114,7 @@
     }
 
     // Get all cards and initialize countdown for each
-    var cards = document.querySelectorAll('.col-md');
+    var cards = document.querySelectorAll('.card-body');
     cards.forEach(function(card) {
         var dueDate = card.dataset.dueDate;
         initializeCardCountdown(card, dueDate);
