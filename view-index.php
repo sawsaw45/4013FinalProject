@@ -68,12 +68,12 @@
 
        <div class="card border <?php echo $priorityBg?>">
            
-       <div class="card-body d-flex flex-column" date-due-date="<?php echo $note['Due Date']?>">
+       <div class="card-body d-flex flex-column">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
        <p class="card-text d-inline-block text-truncate"><?php echo $note['Contents']?></p>
        <p class="card-text"><strong>Due Date:</strong> <?php echo $note['Due Date']?></p>
        <p class="card-text"><strong>Priority:</strong><?php echo $note['Priority']?></p>
-        <div class="card-timer"></div>
+        <div class="card-timer" date-due-date="<?php echo $note['Due Date']?>></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
 
 
@@ -90,7 +90,7 @@
 <script>
     // Function to initialize countdown for a specific card
     function initializeCardCountdown(card, dueDate) {
-        var countDownDate = moment(dueDate, 'Y-M-D').toDate();
+        var countDownDate = moment(dueDate, 'Y-M-D');
 
         function updateCountdown() {
             var now = moment();
@@ -114,7 +114,7 @@
     }
 
     // Get all cards and initialize countdown for each
-    var cards = document.querySelectorAll('.card-body');
+    var cards = document.querySelectorAll('.card-timer');
     cards.forEach(function(card) {
         var dueDate = card.dataset.dueDate;
         initializeCardCountdown(card, dueDate);
