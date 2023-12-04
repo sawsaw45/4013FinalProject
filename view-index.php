@@ -11,10 +11,8 @@
     <style> .card{
             width:200px;
         }</style>
-    <?php
-    require_once("models/connection.php");
-    require_once("models/index-db.php");
-    ?>
+
+
 </head>
 <body>
 
