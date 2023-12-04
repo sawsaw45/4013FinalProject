@@ -9,8 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
-    <style> .card{
-            width:200px;
+    <style>  .card {
+            width: 200px;
+            transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Scale the card slightly when hovered */
         }</style>
 
 
