@@ -11,7 +11,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editToDoModalLabel<?php echo $note['noteid']; ?>">Edit course</h1>
+                <h1 class="modal-title fs-5" id="editToDoModalLabel<?php echo $note['noteid']; ?>">Edit Note</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -27,6 +27,10 @@
                     <div class="mb-3">
                         <label for="DueDate<?php echo $note['Due Date']?>" class="form-label">Due Date</label>
                         <input type="datetime-local" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo $note['Due Date']?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority</label>
+                        <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo $note['Priority']?>">
                     </div>
 
                     <input type="hidden" name="cid" value="<?php echo $note['noteid']; ?>">
