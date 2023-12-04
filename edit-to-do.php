@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority</label>
-                        <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo $note['Priority']?>">
+                        <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo date('Y-m-d\TH:i:sP', $note['Priority']);?>">
                     </div>
 
                     <input type="hidden" name="cid" value="<?php echo $note['noteid']; ?>">
