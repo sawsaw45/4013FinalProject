@@ -84,40 +84,43 @@
 
 </div>
 </body>
-<script>
-    // Function to initialize countdown for a specific modal
-    function initializeModalCountdown(modalId, dueDate) {
-        var correctedDate = date('Y-m-d',strtotime(dueDate)
-        var countDownDate = moment(correctedDate);
+
+    <!-- Add this script after including your other scripts -->
+    <script>
+        // Function to initialize countdown for a specific modal
+        function initializeModalCountdown(modalId, dueDate) {
+        var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
 
         function updateCountdown() {
-            var now = moment();
-            var distance = moment(countDownDate).diff(now);
+        var now = moment();
+        var distance = moment(countDownDate).diff(now);
 
-            if (distance > 0) {
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (distance > 0) {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById(modalId + "-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            } else {
-                clearInterval(interval);
-                document.getElementById(modalId + "-timer").innerHTML = "EXPIRED";
-            }
-        }
+        document.getElementById("editToDoModal" + modalId + "-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    } else {
+        clearInterval(interval);
+        document.getElementById("editToDoModal" + modalId + "-timer").innerHTML = "EXPIRED";
+    }
+    }
 
         updateCountdown();
         var interval = setInterval(updateCountdown, 1000);
     }
 
-    // Event listener for modal show event
-    document.addEventListener('show.bs.modal', function (event) {
+        // Event listener for modal show event
+        document.addEventListener('show.bs.modal', function (event) {
         var modalId = event.target.id; // Get the ID of the opened modal
         var dueDate = event.relatedTarget.dataset.dueDate; // Get the due date from the data attribute
         initializeModalCountdown(modalId, dueDate); // Initialize countdown for the opened modal with due date
     });
 </script>
+
+
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
