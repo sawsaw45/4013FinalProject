@@ -89,7 +89,6 @@
 <!-- Add this script after including your other scripts -->
 <script>
     // Function to initialize countdown for a specific card
-    // Function to initialize countdown for a specific card
     function initializeCardCountdown(timerId, dueDate) {
         var cardId = timerId.replace("timer-", ""); // Extract the noteid from the timer ID
         var countDownDate = moment(dueDate, 'YYYY-MM-DD').toDate();
@@ -116,15 +115,15 @@
         interval = setInterval(updateCountdown, 1000); // Assign the interval here
     }
 
-
     // Get all timers and initialize countdown for each
     var timers = document.querySelectorAll('.card-timer');
     timers.forEach(function(timer) {
         var timerId = timer.id;
-        var dueDate = timer.parentElement.parentElement.parentElement.dataset.dueDate; // Adjust to navigate up to the card div
+        var dueDate = timer.parentElement.dataset.dueDate; // Adjust to navigate up to the card div
         initializeCardCountdown(timerId, dueDate);
     });
 </script>
+
 
 
 
