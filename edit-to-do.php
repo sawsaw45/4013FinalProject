@@ -29,7 +29,7 @@
                         <input type="date" id="DueDate<?php echo $note['Due Date']?>" name="Due Date" value="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
                     </div>
                     <div class="mb-3">
-                        <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority Level <span class="bg-secondary border"><span class="text-success">1</span>-<span class="text-danger">10</span></span></label>
+                        <label for="Priority<?php echo $note['Priority']?>" class="form-label">Priority Level <span class="bg-secondary border border-5"><span class="text-success">1</span>-<span class="text-danger">10</span></span></label>
                         <input type="text" class="form-control" id="Priority<?php echo $note['Priority']?>" name="Priority" value="<?php echo $note['Priority']?>">
                     </div>
 
