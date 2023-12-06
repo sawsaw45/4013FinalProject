@@ -80,19 +80,18 @@
             $pri10 = 'extra-urgent';
         }
         $priorityBg = '';
-        if ($priority = 0) {
-            $priorityBg = 'border-secondary';
+    if ($priority === 0) {
+        $priorityBg = 'border-secondary';
+    } elseif ($priority < 3) {
+        $priorityBg = 'border-success';
+    } elseif ($priority < 6) {
+        $priorityBg = 'border-warning';
+    } elseif ($priority <= 9) {
+        $priorityBg = 'border-danger';
+    }
 
-        }
-        elseif ($priority < 3) {
-            $priorityBg = 'border-success';
-        } elseif ($priority < 6) {
-            $priorityBg = 'border-warning';
-        } elseif ($priority <= 9){
-            $priorityBg = 'border-danger';
-        }
 
-        ?> <div class="col-md mb-2 d-flex align-items-stretch">
+    ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
        <div class="card border hoverable-card <?php echo $priorityBg?> <?php echo $pri10?>" id="card-<?php echo $note['noteid']; ?>" >
            
