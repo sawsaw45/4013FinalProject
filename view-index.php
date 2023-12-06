@@ -84,11 +84,13 @@
            <script>    // Add modal-open class to the card when the modal is opened
                $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
                    $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
+                   console.log('Modal opened: #card-<?php echo $note['noteid']; ?>');
                });
 
                // Remove modal-open class from the card when the modal is closed
                $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
-                   $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
+                   $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open')
+                   console.log('Modal closed: #card-<?php echo $note['noteid']; ?>');
                });</script>
 
         <?php
