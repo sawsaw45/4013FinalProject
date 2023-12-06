@@ -17,7 +17,24 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
         }
-       </style>
+        /* Style for even cards with class 'extra-urgent' */
+        .extra-urgent:nth-child(even) {
+            background-color: #f8f9fa; /* Light gray */
+            border-width: 1px;
+        }
+
+        /* Style for odd cards with class 'extra-urgent' */
+        .extra-urgent:nth-child(odd) {
+            background-color: #fff; /* White */
+            border-width: 2px;
+        }
+
+        /* Additional style for every third card with class 'extra-urgent' */
+        .extra-urgent:nth-child(3n) {
+            border-width: 3px;
+        }
+
+    </style>
 
 
 </head>
@@ -57,7 +74,10 @@
 
     foreach ($notes as $note) {
         $priority = $note['Priority'];
-
+        $pri10 = '';
+        if ($priority =10) {
+            $pri10 = 'extra-urgent';
+        }
         $priorityBg = '';
         if ($priority <= 0) {
             $priorityBg = 'border-secondary';
@@ -73,7 +93,7 @@
 
         ?> <div class="col-md mb-2 d-flex align-items-stretch">
 
-       <div class="card border hoverable-card <?php echo $priorityBg?>" id="card-<?php echo $note['noteid']; ?>" >
+       <div class="card border hoverable-card <?php echo $priorityBg?> <?php echo $pri10?>" id="card-<?php echo $note['noteid']; ?>" >
            
        <div class="card-body d-flex flex-column" data-due-date="<?php echo date('Y-m-d',strtotime($note['Due Date']))?>">
        <h5 class="card-title"><?php echo $note['Name']?></h5>
