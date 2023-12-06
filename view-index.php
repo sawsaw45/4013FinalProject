@@ -76,17 +76,17 @@
     foreach ($notes as $note) {
         $priority = $note['Priority'];
         $pri10 = '';
-        if ($priority =10) {
+        if ($priority = 10) {
             $pri10 = 'extra-urgent';
         }
         $priorityBg = '';
-        if ($priority <= 0) {
+        if ($priority = 0) {
             $priorityBg = 'border-secondary';
 
         }
-        elseif ($priority <= 3) {
+        elseif ($priority < 3) {
             $priorityBg = 'border-success';
-        } elseif ($priority <= 6) {
+        } elseif ($priority < 6) {
             $priorityBg = 'border-warning';
         } elseif ($priority <= 9){
             $priorityBg = 'border-danger';
