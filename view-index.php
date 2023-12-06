@@ -88,7 +88,7 @@
             $priorityBg = 'border-success';
         } elseif ($priority <= 6) {
             $priorityBg = 'border-warning';
-        } else {
+        } elseif ($priority <= 9){
             $priorityBg = 'border-danger';
         }
 
