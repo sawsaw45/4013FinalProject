@@ -26,7 +26,7 @@
                 border-width: 2px;
             }
             50% {
-                background-color: #f8f9fa; /* Light gray */
+                background-color: #d3d3d3; /* Light gray */
                 border-width: 3px;
             }
             100% {
