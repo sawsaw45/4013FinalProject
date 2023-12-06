@@ -17,21 +17,22 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
         }
-        /* Style for even cards with class 'extra-urgent' */
-        .extra-urgent:nth-child(even) {
-            background-color: #f8f9fa; /* Light gray */
-            border-width: 1px;
+        .extra-urgent {
+            animation: alternateAnimation 3s infinite; /* 3s duration, infinite loop */
         }
-
-        /* Style for odd cards with class 'extra-urgent' */
-        .extra-urgent:nth-child(odd) {
-            background-color: #fff; /* White */
-            border-width: 2px;
-        }
-
-        /* Additional style for every third card with class 'extra-urgent' */
-        .extra-urgent:nth-child(3n) {
-            border-width: 3px;
+        @keyframes alternateAnimation {
+            0% {
+                background-color: #fff; /* White */
+                border-width: 1px;
+            }
+            50% {
+                background-color: #f8f9fa; /* Light gray */
+                border-width: 2px;
+            }
+            100% {
+                background-color: #fff; /* White */
+                border-width: 3px;
+            }
         }
 
     </style>
