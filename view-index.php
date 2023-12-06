@@ -81,7 +81,15 @@
        <p class="card-text"><strong>Priority: </strong><?php echo $note['Priority']?></p>
         <div class="card-timer" id="timer-<?php echo $note['noteid']; ?>"></div>
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
+           <script>    // Add modal-open class to the card when the modal is opened
+               $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
+                   $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
+               });
 
+               // Remove modal-open class from the card when the modal is closed
+               $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
+                   $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
+               });</script>
 
         <?php
     echo '</div></div>'; ?></div><?php
@@ -92,15 +100,7 @@
 
 </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script>    // Add modal-open class to the card when the modal is opened
-            $('#editToDoModal<?php echo $note['noteid']; ?>').on('show.bs.modal', function () {
-                $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
-            });
 
-            // Remove modal-open class from the card when the modal is closed
-            $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
-                $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open');
-            });</script>
 </body>
 
 <script>
