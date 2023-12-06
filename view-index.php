@@ -83,13 +83,13 @@
            <div class="row mt-auto"><div class="col"><?php include "edit-to-do.php";?></div><div class="col"><?php include "delete-to-do.php";?></div></div>
            <script>    // Add modal-open class to the card when the modal is opened
                $('#editToDoModal<?php echo $note['noteid']; ?>').on('shown.bs.modal', function () {
-                   $('#card-<?php echo $note['noteid']; ?>').addClass('modal-open');
+                   $("#card-<?php echo $note['noteid']; ?>").addClass('modal-open');
                    console.log('Modal opened: #card-<?php echo $note['noteid']; ?>');
                });
 
                // Remove modal-open class from the card when the modal is closed
-               $('#editToDoModal<?php echo $note['noteid']; ?>').on('hidden.bs.modal', function () {
-                   $('#card-<?php echo $note['noteid']; ?>').removeClass('modal-open')
+               $('#editToDoModal<?php echo $note['noteid']; ?>').on('hide.bs.modal', function () {
+                   $("#card-<?php echo $note['noteid']; ?>").removeClass('modal-open')
                    console.log('Modal closed: #card-<?php echo $note['noteid']; ?>');
                });</script>
 
