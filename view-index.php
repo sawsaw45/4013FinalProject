@@ -116,10 +116,10 @@
         function updateCountdown() {
             var now = new Date();
             var distance = countDownDate - now;
-            console.log('dueDate:', dueDate);
-            console.log('now:', now);
-            console.log('countDownDate:', countDownDate);
-            console.log('distance:', distance);
+            //console.log('dueDate:', dueDate);
+            //console.log('now:', now);
+            //console.log('countDownDate:', countDownDate);
+            //console.log('distance:', distance);
 
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -127,7 +127,7 @@
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                console.log('days:', days, 'hours:', hours, 'minutes:', minutes, 'seconds:', seconds);
+                //console.log('days:', days, 'hours:', hours, 'minutes:', minutes, 'seconds:', seconds);
 
                 document.getElementById(timerId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             } else {
