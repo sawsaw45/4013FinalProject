@@ -23,15 +23,15 @@
         @keyframes alternateAnimation {
             0% {
                 background-color: #fff; /* White */
-                border-width: 1px;
+                border-width: 2px;
             }
             50% {
                 background-color: #f8f9fa; /* Light gray */
-                border-width: 2px;
+                border-width: 3px;
             }
             100% {
                 background-color: #fff; /* White */
-                border-width: 3px;
+                border-width: 4px;
             }
         }
 
