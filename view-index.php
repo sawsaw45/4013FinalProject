@@ -78,6 +78,7 @@
         $pri10 = '';
         if ($priority === 10) {
             $pri10 = 'extra-urgent';
+            $priorityBg = 'border-danger';
         }
         $priorityBg = '';
     if ($priority === 0) {
