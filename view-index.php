@@ -76,7 +76,7 @@
     foreach ($notes as $note) {
         $priority = $note['Priority'];
         $pri10 = '';
-        if ($priority = 10) {
+        if ($priority === 10) {
             $pri10 = 'extra-urgent';
         }
         $priorityBg = '';
